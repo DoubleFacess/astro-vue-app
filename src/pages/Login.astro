@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Login from '../components/Login.vue'
+import MyLogin from '../components/Login.vue'
+import '../components/styles/style.astro'
 ---
 
 <html>
 	<body>
 		<main>
 			<!-- <h1 class="font-bold">This is Astro Test</h1> -->
-			<Login client:visible />
+			<MyLogin client:visible />
 		</main>
 	</body>
 </html>

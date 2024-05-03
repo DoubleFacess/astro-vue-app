@@ -1,14 +1,39 @@
 ---
+<<<<<<< HEAD
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/card.astro';
 import NasaImage from '../components/nasaImages.vue'
+=======
+import Base from "../layouts/Base.astro"
+import Supabase from "../components/icons/Supabase.astro"
+import AstroIcon from "../components/icons/AstroIcon.astro"
+export const prerender = true;
+
+const title = "Supabase and Astro Demo"
+>>>>>>> c17dd9eec56a6c2210bc805d3a8ea6a8c68938b7
 ---
 
-<html>
-	<body>
-		<main>
-			<!-- <h1 class="font-bold">This is Astro Test</h1> -->
-			<NasaImage client:visible />
-		</main>
-	</body>
-</html>
+<Base title={title}>
+  <main class="flex-1 flex flex-col gap-4 items-center p-4 justify-center">
+    <h1 class="text-2xl sm:text-4xl font-bold text-center">{title}</h1>
+    <ul class="flex gap-6 items-center font-bold text-2xl mt-6">
+      <li
+        class="dark:bg-zinc-800 bg-white border-t dark:border-zinc-700 h-20 w-20 border-transparent rounded-lg shadow dark:shadow-none flex items-center justify-center"
+      >
+        <AstroIcon />
+      </li>
+       &plus;
+      <li
+        class="dark:bg-zinc-800 bg-white border-t dark:border-zinc-700 h-20 w-20 border-transparent rounded-lg shadow dark:shadow-none flex items-center justify-center"
+      >
+        <Supabase />
+      </li>
+    </ul>
+    <p class="mt-6 max-w-prose">This page was pre-rendered at build time</p>
+    <a
+      href="https://github.com/rrifat/astro-supabase"
+      class="font-mono max-w-prose underline underline-offset-2 hover:text-blue-700 text-blue-600 dark:text-blue-500 dark:hover:text-blue-400"
+      >Source code on GitHub</a
+    >
+  </main>
+</Base>
